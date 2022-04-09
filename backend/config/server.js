@@ -7,18 +7,8 @@ const server = express()
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
-
 server.listen(port, function() {
     console.log(`BACKEND rodando na porta ${port}.`)
 })
 
-server.use(function(req, res, next){
-    console.log('meu middleware')
-    next()
-})
-
-
-server.use(function(req, res, next){
-    console.log('meu middleware 2')
-    res.send('Funcionou')
-})
+module.exports = server
